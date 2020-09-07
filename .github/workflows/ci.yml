@@ -40,7 +40,6 @@ jobs:
                   git rm "*" -fr
                   git checkout HEAD -- .gitattributes .nojekyll CNAME
                   mv build/web/* .
-                  mv build/pdf/flare_pdf.pdf flare.pdf
                   rm build obj -fr
                   git add -A
                   git commit -m "CI: Deploy $sha." || exit 0
