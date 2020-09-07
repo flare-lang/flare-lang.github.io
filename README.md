@@ -15,7 +15,7 @@ Requirements:
 * [wkhtmltopdf](https://wkhtmltopdf.org)
 * [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 
-Run `./build.ps1` to produce the website and PDF in the `build` directory.
+Run `./build.ps1` to produce the website in the `build` directory.
 
 Run `./lint.ps1` to lint all Markdown files.
 
