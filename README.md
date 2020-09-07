@@ -1,5 +1,8 @@
 # <img src="https://github.com/flare-lang/flare-lang.github.io/raw/master/Flare.svg" width="32"> Flare Programming Language Website
 
+[![Build Status](https://github.com/flare-lang/flare-news/workflows/CI/badge.svg)](https://github.com/flare-lang/flare-lang.github.io/actions?query=workflow%3ACI)
+[![Discord Server](https://discordapp.com/api/guilds/473031281396023317/widget.png)](https://discord.gg/EWXVkJ2)
+
 This repository contains the source code for the Flare programming language
 website, which is hosted at [flare-lang.org](https://flare-lang.org).
 
