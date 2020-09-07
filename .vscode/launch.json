@@ -9,6 +9,20 @@
             "type": "chrome",
             "request": "launch",
             "file": "${workspaceFolder}/build/web/index.html"
+        },
+        {
+            "name": "Edge: Launch",
+            "preLaunchTask": "build",
+            "type": "edge",
+            "request": "launch",
+            "file": "${workspaceFolder}/build/web/index.html"
+        },
+        {
+            "name": "Firefox: Launch",
+            "preLaunchTask": "build",
+            "type": "firefox",
+            "request": "launch",
+            "file": "${workspaceFolder}/build/web/index.html"
         }
     ]
 }

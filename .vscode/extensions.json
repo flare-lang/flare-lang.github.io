@@ -6,9 +6,11 @@
         "DavidAnson.vscode-markdownlint",
         "DotJoshJohnson.xml",
         "EditorConfig.EditorConfig",
+        "firefox-devtools.vscode-firefox-debug",
         "GitHub.vscode-pull-request-github",
         "hashhar.gitattributes",
         "ms-vscode.PowerShell",
-        "msjsdiag.debugger-for-chrome"
+        "msjsdiag.debugger-for-chrome",
+        "msjsdiag.debugger-for-edge"
     ]
 }
