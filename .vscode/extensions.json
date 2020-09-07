@@ -4,13 +4,14 @@
     "recommendations": [
         "codezombiech.gitignore",
         "DavidAnson.vscode-markdownlint",
-        "DotJoshJohnson.xml",
         "EditorConfig.EditorConfig",
         "firefox-devtools.vscode-firefox-debug",
         "GitHub.vscode-pull-request-github",
         "hashhar.gitattributes",
+        "jock.svg",
         "ms-vscode.PowerShell",
         "msjsdiag.debugger-for-chrome",
-        "msjsdiag.debugger-for-edge"
+        "msjsdiag.debugger-for-edge",
+        "redhat.vscode-yaml"
     ]
 }
