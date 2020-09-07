@@ -1,4 +1,4 @@
-# ![Flare](Flare.svg) Flare Programming Language Website
+# <img src="https://github.com/flare-lang/flare-lang.github.io/raw/master/Flare.svg" width="32"> Flare Programming Language Website
 
 This repository contains the source code for the Flare programming language
 website, which is hosted at [flare-lang.org](https://flare-lang.org).
