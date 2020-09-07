@@ -22,8 +22,9 @@ jobs:
                   git fetch origin --unshallow
             - name: Install dependencies
               run: |
-                  npm install markdownlint-cli -g
-                  choco install docfx wkhtmltopdf -y
+                  npm install markdownlint-cli@0.23.2 -g
+                  choco install docfx --version 2.56.2 -y
+                  choco install wkhtmltopdf --version 0.12.6 -y
             - name: Lint Markdown files
               run: |
                   ./lint.ps1
