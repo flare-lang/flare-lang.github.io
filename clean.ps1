@@ -3,5 +3,4 @@
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version 2.0
 
-Remove-Item -ErrorAction Ignore -Force -Recurse build
-Remove-Item -ErrorAction Ignore -Force -Recurse obj
+Remove-Item build, obj -ErrorAction Ignore -Force -Recurse
