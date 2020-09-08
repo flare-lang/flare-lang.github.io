@@ -51,7 +51,7 @@
         "outline": "WkDefaultOutline",
         "excludeDefaultToc": true,
         "wkhtmltopdf": {
-            "additionalArguments": "--enable-local-file-access"
+            "additionalArguments": "--enable-local-file-access --title \"Flare Programming Language\" --header-line --header-spacing 5 --header-left \"[doctitle]\" --footer-line --footer-spacing 5 --footer-right \"[page] / [topage]\""
         }
     }
 }

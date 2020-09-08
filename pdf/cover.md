@@ -1,8 +1,6 @@
----
-title: Home
----
-
-# ![Flare](../images/logo.svg) Flare Programming Language
+<div style="text-align: center">
+    <img src="../images/pdf.png">
+</div>
 
 **Flare** is a dynamic, expression-oriented programming language featuring
 first-class functions with closures, explicit opt-in mutability, actor-based
