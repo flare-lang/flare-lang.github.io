@@ -50,7 +50,7 @@ jobs:
                   git commit -m "CI: Deploy $sha." || exit 0
                   git push origin live
             - name: Notify Discord
-              if: (cancelled() || failure()) && github.event_name == 'push' && github.repository == 'flare-lang/flare-lang.github.io'
+              if: failure() && github.event_name == 'push' && github.repository == 'flare-lang/flare-lang.github.io'
               uses: sarisia/actions-status-discord@v1.7.0
               with:
                   webhook: ${{ secrets.DISCORD_BUILDS_WEBHOOK }}
