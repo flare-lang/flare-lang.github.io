@@ -38,8 +38,8 @@ jobs:
             - name: Deploy website
               if: github.event_name == 'push' && github.ref == 'refs/heads/master'
               run: |
-                  git config --global user.name "github-actions"
-                  git config --global user.email "bot@flare-lang.org"
+                  git config --global user.name github-actions
+                  git config --global user.email bot@flare-lang.org
                   sha=$(git rev-parse -q --verify HEAD)
                   git checkout origin/live -b live
                   git rm "*" -fr
