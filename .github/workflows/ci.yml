@@ -40,7 +40,7 @@ jobs:
               run: |
                   git config --global user.name github-actions
                   git config --global user.email bot@flare-lang.org
-                  sha=$(git rev-parse -q --verify HEAD)
+                  sha=$(git show -s --format=%H)
                   git checkout origin/live -b live
                   git rm "*" -fr
                   git checkout HEAD -- .gitattributes .nojekyll CNAME
