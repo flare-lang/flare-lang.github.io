@@ -456,8 +456,8 @@ These are the types that Flare supports:
   of any other meaningful value (similar to `null` in other languages).
 * Boolean: Has the value `true` or `false`.
 * Atom: A named constant with an indeterminate value. Comparing two atoms is
-  much faster than comparing two strings, so atoms are typically used as
-  markers or tags. Examples: `:foo`, `Bar`, `:$baz`.
+  much faster than comparing two strings, so atoms are typically used as markers
+  or tags. Examples: `:foo`, `Bar`, `:$baz`.
 * Integer: An arbitrarily large integer. Examples: `42`, `-42`,
   `123456789123456789123456789123456789`.
 * Real: A real number represented as IEEE 754 `binary64` floating point.
@@ -468,7 +468,8 @@ These are the types that Flare supports:
   such as `Core::IO`. Module values are functionally similar to records
   containing only immutable fields.
 * Function: A callable function as a value. Carries information such as its
-  originating module, name (if any), and arity. Example: `fn(x) => x * x`.
+  originating module, name (if any), arity, and upvalues (if any). Example:
+  `fn(x) => x * x`.
 * Record: Similar to objects in other languages, a record is a collection of
   fields (which can individually be mutable or immutable), optionally carrying
   a name. Records can define overloaded behaviors such as operators, hashing,
@@ -478,10 +479,10 @@ These are the types that Flare supports:
   that they must always carry a name, and they are allowed to be used as the
   operand of the `raise` expression. Example:
   `exc MyError { message = "error!" }`.
-* Tuple: An immutable array of values with a fixed length of at least 2
+* Tuple: An immutable sequence of values with a fixed length of at least 2
   elements. Examples: `(42, :foo)`, `(:ok, rec { x = 42 }, "y")`.
-* Array: An array of values that may be mutable or immutable. Mutable arrays are
-  expandable. Examples: `[]`, `[1, 2, 3]`, `mut [1, :foo, "bar"]`.
+* Array: An sequence of values that may be mutable or immutable. Mutable arrays
+  are expandable. Examples: `[]`, `[1, 2, 3]`, `mut [1, :foo, "bar"]`.
 * Set: A hashed set of values that may be mutable or immutable, and does not
   allow duplicate values. Mutable sets are expandable. Sets have no ordering
   guarantees. Examples: `#{}`, `#{"x", :y, z}`, `mut #{:foo, :bar, :baz}`.
@@ -493,9 +494,8 @@ These are the types that Flare supports:
   library functions such as `Core::Agent::self` and `Core::Agent::spawn`.
 * Reference: A globally unique, opaque value. A reference value can only be
   obtained by calling `Core::new_ref` or by obtaining it from another agent.
-  References are backed by at least 20 bytes of randomly generated data. These
-  properties make references practically unforgeable and non-repeatable within
-  a program's lifetime.
+  References are unforgeable and are thus commonly used to represent
+  capabilities.
 * Pointer: A native pointer. These are usually obtained by calling into various
   functions provided by the runtime system. As Flare has no syntax for
   dereferencing pointers, pointer values are effectively opaque to Flare code.
@@ -638,9 +638,9 @@ match bar() {
 };
 ```
 
-A failed match in a `let` statement will result in a panic, as will a failed
-match in the `for` and `use` expressions. A `match` expression will only panic
-if no cases match and there is no fallback case.
+A failed match in a `let` or `use` statement will result in a panic, as will a
+failed match in the `for` expression. A `match` expression will only panic if no
+cases match and there is no fallback case.
 
 Patterns allow recursively destructuring arbitrarily complex values and data
 structures.
@@ -679,7 +679,7 @@ fn foo() {
 }
 
 fn bar() {
-    foo()?; ' OK; propagatates exception to the caller of `bar`.
+    foo()?; ' OK; propagates exception to the caller of `bar`.
 
     foo()? catch {
         _ => nil; ' OK; exception was handled.
@@ -813,9 +813,9 @@ this function is ignored; halting with a non-zero status code can be done with
 the `Core::halt` function.
 
 The `main` function will be executed in the root agent - a special agent created
-by the runtime system on startup. This agent has all capabilities initially
-made available by the runtime system, and can freely provide those capabilities
-to child agents as needed. The root agent is thus quite similar to the `init`
+by the runtime system on startup. This agent has all capabilities initially made
+available by the runtime system, and can freely provide those capabilities to
+child agents as needed. The root agent is thus quite similar to the `init`
 process in a Unix system.
 
 The runtime system terminates once the `main` function returns, or if some
